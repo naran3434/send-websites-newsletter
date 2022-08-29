@@ -40,7 +40,7 @@ class SendPostEmails extends Command
      */
     public function handle()
     {
-        $emails = SendPostEmail::where('is_email_sent', 0)->with(['user', 'post'])
+        $emails = SendPostEmail::where('is_email_sent', 0)->with(['user', 'post.webmaster'])
                                 ->take(100)->get();
 
         foreach ($emails as $row) {

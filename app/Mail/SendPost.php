@@ -30,7 +30,7 @@ class SendPost extends Mailable
     public function __construct(Post $post)
     {
         $this->post = $post;
-        $this->subject = $post->title;
+        $this->subject = $post->title.' - '.$post->webmaster->name;
     }
 
     /**
