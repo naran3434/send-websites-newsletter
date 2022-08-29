@@ -1,0 +1,511 @@
+{
+	"info": {
+		"_postman_id": "a4642343-6e6c-43fe-a5cc-ce9ed3a12e71",
+		"name": "Newsletter App",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "151859"
+	},
+	"item": [
+		{
+			"name": "Create New Post",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "New blog 7",
+							"type": "text"
+						},
+						{
+							"key": "body",
+							"value": "This post contains body 7",
+							"type": "text"
+						},
+						{
+							"key": "web_master_id",
+							"value": "2",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://newsletter-app.test/api/post/store",
+					"protocol": "https",
+					"host": [
+						"newsletter-app",
+						"test"
+					],
+					"path": [
+						"api",
+						"post",
+						"store"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Validation",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "New blog 5",
+									"type": "text"
+								},
+								{
+									"key": "body",
+									"value": "This post contains body 5",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "web_master_id",
+									"value": "2",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "https://newsletter-app.test/api/post/store",
+							"protocol": "https",
+							"host": [
+								"newsletter-app",
+								"test"
+							],
+							"path": [
+								"api",
+								"post",
+								"store"
+							]
+						}
+					},
+					"status": "Unprocessable Content",
+					"code": 422,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "nginx/1.21.6"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/7.4.28"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 29 Aug 2022 18:08:38 GMT"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": false,\n    \"data\": {\n        \"body\": [\n            \"The body field is required.\"\n        ],\n        \"web_master_id\": [\n            \"The web master id field is required.\"\n        ]\n    },\n    \"info\": \"validation_error\"\n}"
+				},
+				{
+					"name": "New Post Created",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "New blog 7",
+									"type": "text"
+								},
+								{
+									"key": "body",
+									"value": "This post contains body 7",
+									"type": "text"
+								},
+								{
+									"key": "web_master_id",
+									"value": "2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://newsletter-app.test/api/post/store",
+							"protocol": "https",
+							"host": [
+								"newsletter-app",
+								"test"
+							],
+							"path": [
+								"api",
+								"post",
+								"store"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "nginx/1.21.6"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/7.4.28"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 29 Aug 2022 18:09:05 GMT"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "58"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"data\": {\n        \"title\": \"New blog 7\",\n        \"body\": \"This post contains body 7\",\n        \"web_master_id\": \"2\",\n        \"updated_at\": \"2022-08-29T18:09:05.000000Z\",\n        \"created_at\": \"2022-08-29T18:09:05.000000Z\",\n        \"id\": 2\n    },\n    \"info\": \"Post created successfully!\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Subscribe User to Website",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user_id\": 5,\n    \"web_master_id\": 2\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://newsletter-app.test/api/user/subscribe",
+					"protocol": "https",
+					"host": [
+						"newsletter-app",
+						"test"
+					],
+					"path": [
+						"api",
+						"user",
+						"subscribe"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Already Subscribed",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user_id\": 7,\n    \"web_master_id\": 2\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://newsletter-app.test/api/user/subscribe",
+							"protocol": "https",
+							"host": [
+								"newsletter-app",
+								"test"
+							],
+							"path": [
+								"api",
+								"user",
+								"subscribe"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "nginx/1.21.6"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/7.4.28"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 29 Aug 2022 18:07:27 GMT"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": false,\n    \"data\": null,\n    \"info\": \"Already Subscribed!\"\n}"
+				},
+				{
+					"name": "Sucessfully Subscription",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user_id\": 5,\n    \"web_master_id\": 2\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://newsletter-app.test/api/user/subscribe",
+							"protocol": "https",
+							"host": [
+								"newsletter-app",
+								"test"
+							],
+							"path": [
+								"api",
+								"user",
+								"subscribe"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "nginx/1.21.6"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/7.4.28"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 29 Aug 2022 18:07:49 GMT"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "58"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"data\": {\n        \"user_id\": 5,\n        \"web_master_id\": 2,\n        \"updated_at\": \"2022-08-29T18:07:49.000000Z\",\n        \"created_at\": \"2022-08-29T18:07:49.000000Z\",\n        \"id\": 3\n    },\n    \"info\": \"Subscribed successfully!\"\n}"
+				},
+				{
+					"name": "Validations",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://newsletter-app.test/api/user/subscribe",
+							"protocol": "https",
+							"host": [
+								"newsletter-app",
+								"test"
+							],
+							"path": [
+								"api",
+								"user",
+								"subscribe"
+							]
+						}
+					},
+					"status": "Unprocessable Content",
+					"code": 422,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "nginx/1.21.6"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/7.4.28"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 29 Aug 2022 18:08:11 GMT"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "57"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": false,\n    \"data\": {\n        \"user_id\": [\n            \"The user id field is required.\"\n        ],\n        \"web_master_id\": [\n            \"The web master id field is required.\"\n        ]\n    },\n    \"info\": \"validation_error\"\n}"
+				}
+			]
+		}
+	]
+}
